@@ -1,0 +1,482 @@
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top" ng-controller="mainController">
+    <!-- Navigation-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+      <!-- header -->
+      <% include ../partials/header %>
+      <!-- end header -->
+  
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+    
+        <!-- left bar -->
+        <% include ../partials/left %>
+        <!-- end left bar -->
+    
+        <ul class="navbar-nav sidenav-toggler">
+          <li class="nav-item">
+            <a class="nav-link text-center" id="sidenavToggler">
+              <i class="fa fa-fw fa-angle-left"></i>
+            </a>
+          </li>
+        </ul>
+        <ul class="navbar-nav ml-auto">
+
+           <!-- left bar -->
+           <% include ../partials/head %>
+           <!-- end left bar -->
+
+        </ul>
+      </div>
+    </nav>
+    
+    <div class="content-wrapper">
+      <div class="container-fluid">
+        <!-- Breadcrumbs-->
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item">
+            <a ui-sref="home">Dashboard</a>
+          </li>
+          <li class="breadcrumb-item active">User</li>
+        </ol>
+        <div class="row">
+          <div class="col-12">
+
+            <!--CONTENT -->
+        <div class="card mb-3">
+            <div class="card-header">
+              <button type="button" class="btn btn-success" data-toggle="modal" data-target="#userModal"><i class="fa fa-plus" aria-hidden="true"></i></button>
+            </div>
+            <div class="card-body">
+              <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                  <thead>
+                  <tr>
+                    <th>No</th>
+                    <th>USERNAME</th>
+                    <th>EMAIL</th>
+                    <th>CREATE DATE</th>
+                    <th>LOGIN DATE</th>
+                    <th>ACTION</th>
+                  </tr>
+                  </thead>
+                  <tbody>
+                  <tr>
+                    <td>1</td>
+                    <td>System Architect</td>
+                    <td>Edinburgh</td>
+                    <td>61</td>
+                    <td>2011/04/25</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td>Accountant</td>
+                    <td>Tokyo</td>
+                    <td>63</td>
+                    <td>2011/07/25</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>3</td>
+                    <td>Junior Technical Author</td>
+                    <td>San Francisco</td>
+                    <td>66</td>
+                    <td>2009/01/12</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>4</td>
+                    <td>Senior Javascript Developer</td>
+                    <td>Edinburgh</td>
+                    <td>22</td>
+                    <td>2012/03/29</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>5</td>
+                    <td>Accountant</td>
+                    <td>Tokyo</td>
+                    <td>33</td>
+                    <td>2008/11/28</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>6</td>
+                    <td>Integration Specialist</td>
+                    <td>New York</td>
+                    <td>61</td>
+                    <td>2012/12/02</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>7</td>
+                    <td>Sales Assistant</td>
+                    <td>San Francisco</td>
+                    <td>59</td>
+                    <td>2012/08/06</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>8</td>
+                    <td>Integration Specialist</td>
+                    <td>Tokyo</td>
+                    <td>55</td>
+                    <td>2010/10/14</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>9</td>
+                    <td>Javascript Developer</td>
+                    <td>San Francisco</td>
+                    <td>39</td>
+                    <td>2009/09/15</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>10</td>
+                    <td>Software Engineer</td>
+                    <td>Edinburgh</td>
+                    <td>23</td>
+                    <td>2008/12/13</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>11</td>
+                    <td>Office Manager</td>
+                    <td>London</td>
+                    <td>30</td>
+                    <td>2008/12/19</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>12</td>
+                    <td>Support Lead</td>
+                    <td>Edinburgh</td>
+                    <td>22</td>
+                    <td>2013/03/03</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>13</td>
+                    <td>Regional Director</td>
+                    <td>San Francisco</td>
+                    <td>36</td>
+                    <td>2008/10/16</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>14</td>
+                    <td>Senior Marketing Designer</td>
+                    <td>London</td>
+                    <td>43</td>
+                    <td>2012/12/18</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>15</td>
+                    <td>Regional Director</td>
+                    <td>London</td>
+                    <td>19</td>
+                    <td>2010/03/17</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>16</td>
+                    <td>Marketing Designer</td>
+                    <td>London</td>
+                    <td>66</td>
+                    <td>2012/11/27</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>17</td>
+                    <td>Chief Financial Officer (CFO)</td>
+                    <td>New York</td>
+                    <td>64</td>
+                    <td>2010/06/09</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>18</td>
+                    <td>Systems Administrator</td>
+                    <td>New York</td>
+                    <td>59</td>
+                    <td>2009/04/10</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>19</td>
+                    <td>Software Engineer</td>
+                    <td>London</td>
+                    <td>41</td>
+                    <td>2012/10/13</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>20</td>
+                    <td>Personnel Lead</td>
+                    <td>Edinburgh</td>
+                    <td>35</td>
+                    <td>2012/09/26</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>21</td>
+                    <td>Development Lead</td>
+                    <td>New York</td>
+                    <td>30</td>
+                    <td>2011/09/03</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>22</td>
+                    <td>Chief Marketing Officer (CMO)</td>
+                    <td>New York</td>
+                    <td>40</td>
+                    <td>2009/06/25</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>23</td>
+                    <td>Pre-Sales Support</td>
+                    <td>New York</td>
+                    <td>21</td>
+                    <td>2011/12/12</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>24</td>
+                    <td>Sales Assistant</td>
+                    <td>Sidney</td>
+                    <td>23</td>
+                    <td>2010/09/20</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>25</td>
+                    <td>Chief Executive Officer (CEO)</td>
+                    <td>London</td>
+                    <td>47</td>
+                    <td>2009/10/09</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>26</td>
+                    <td>Developer</td>
+                    <td>Edinburgh</td>
+                    <td>42</td>
+                    <td>2010/12/22</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>27</td>
+                    <td>Regional Director</td>
+                    <td>Singapore</td>
+                    <td>28</td>
+                    <td>2010/11/14</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>28</td>
+                    <td>Software Engineer</td>
+                    <td>San Francisco</td>
+                    <td>28</td>
+                    <td>2011/06/07</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>29</td>
+                    <td>Chief Operating Officer (COO)</td>
+                    <td>San Francisco</td>
+                    <td>48</td>
+                    <td>2010/03/11</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>30</td>
+                    <td>Regional Marketing</td>
+                    <td>Tokyo</td>
+                    <td>20</td>
+                    <td>2011/08/14</td>
+                    <td>
+                      <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
+                    </td>
+                  </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+          </div>
+          </div>
+             <!--END CONTENT -->
+  
+
+
+
+          </div>
+        </div>
+      </div>
+      <!-- /.container-fluid-->
+      <!-- /.content-wrapper-->
+      
+      <!-- footer -->
+      <% include ../partials/footer %>
+      <!-- end footer -->
+
+ <!-- Modal -->
+<div id="userModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title"><center>Add User</center></h5>          
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <div class="form">
+                <form action="/">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter First Name" name="first-name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Enter Last Name" name="last-name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" placeholder="Enter email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Enter Password" name="password" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" class="form-control" placeholder="Enter Repeat Password" name="repeat-password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Submit</button>
+                </form>
+              </div>
+        </div>
+        <div class="modal-footer">
+      
+        </div>
+      </div>
+       <!-- End Modal content-->
+    </div>
+  </div>
+   <!-- End  Modal -->

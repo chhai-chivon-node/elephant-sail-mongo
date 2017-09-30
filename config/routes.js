@@ -50,7 +50,22 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-  '/dashboard':{
+  '/dashboard/index':{
       view:'dashboard/index'
+  },
+  '/dashboard/category':{
+    view:'dashboard/pages/category'
+  },
+  '/dashboard/product':{
+    view:'dashboard/pages/product'
+  },
+  '/dashboard/customer':{
+    view:'dashboard/pages/customer'
+  },
+  '/dashboard/user':{
+    view:'dashboard/pages/user'
+  },
+  '/admin/login':{
+    view:'dashboard/pages/login'
   }
 };
