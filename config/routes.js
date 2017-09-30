@@ -33,9 +33,14 @@ module.exports.routes = {
   ***************************************************************************/
 
   '/': {
-    view: 'homepage'
-  }
-
+    view: 'index'
+  },
+  '/login':{
+    view:'pages/login'
+  },
+  '/register':{
+    view:'pages/register'
+  },
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
@@ -45,5 +50,7 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
-
+  '/dashboard':{
+      view:'dashboard/index'
+  }
 };
