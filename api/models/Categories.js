@@ -14,6 +14,11 @@ module.exports = {
     description:{
       type:'string'
     }
+    //many to one
+    // products: {
+    //   collection: 'products',
+    //   via: 'categories'
+    // }
   }
 };
 

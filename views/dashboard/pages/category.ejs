@@ -71,6 +71,15 @@
                   </tr>
                   </tbody>
                 </table>
+                <div class="pagination-center">
+                  <div class="pagination">
+                    <a href="#">&laquo;</a>
+                    <a href="#">1</a>
+                    <a class="active" href="#">2</a>
+                    <a href="#">3</a>
+                    <a href="#">&raquo;</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -101,19 +110,14 @@
         </div>
         <div class="modal-body">
             <div class="form">
-                <form action="/">
+                <form  novalidate>
                     <div class="form-group">
                         <label for="product-name">Category name:</label>
                         <input type="text" class="form-control" id="product-name" placeholder="Enter product name" ng-model="item.name" required>
                     </div>
                     <div class="form-group">
                         <label for="category">Choose parent category:</label>
-                        <select class="form-control" id="category">
-                          <option>1</option>
-                          <option>2</option>
-                          <option>3</option>
-                          <option>4</option>
-                        </select>
+                      <select name="selectedCategory"  class="form-control" id="category" ng-options="option.name for option in listCategoriesName track by option.id" ng-model="selectedCategory" ng-change="onCategoryChange()"></select>
                     </div>
                     <div class="form-group">
                         <label for="description">Comment:</label>

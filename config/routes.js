@@ -67,5 +67,8 @@ module.exports.routes = {
   },
   '/admin/login':{
     view:'dashboard/pages/login'
-  }
+  },
+
+
+  'get /list/categories/name':'CategoriesController.categoriesList'
 };

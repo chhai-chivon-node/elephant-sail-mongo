@@ -58,11 +58,27 @@ module.exports.connections = {
   ***************************************************************************/
   mongodbServer: {
     adapter: 'sails-mongo',
-    host: 'localhost',
-    port: 27017,
-    //user: 'username', //optional
-    //password: 'password', //optional
+    
+    
+    
+    //   //local
+    // host: 'localhost',
+    // port: 27017,
+    // //user: '', //optional
+    // //password: 'mart87', //optional
+    // database: 'elephant-sail-mongo' //optional
+
+
+ 
+      //mlab
+    host: 'ds155934.mlab.com',
+    port: 55934,
+    user: 'mart87', //optional
+    password: 'mart87', //optional
     database: 'elephant-sail-mongo' //optional
+
+      //mongodb://<dbuser>:<dbpassword>@ds155934.mlab.com:55934/elephant-sail-mongo
+  
   },
 
   /***************************************************************************

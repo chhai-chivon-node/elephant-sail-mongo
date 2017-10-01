@@ -13,7 +13,14 @@ module.exports = {
     },
     description:{
       type:'string'
-    }
+    },
+
+
+
+    //one to many 
+    // categories: {
+    //   model: 'categories'
+    // }
   }
 };
 

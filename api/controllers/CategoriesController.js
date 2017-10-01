@@ -6,6 +6,25 @@
  */
 var pager = require('sails-pager');
 module.exports = {
+   
+    categoriesList: function (req, res) {
+            Categories.find( { select: ['id','name'] },function(err, categories){
+                res.json(categories);
+            });
+        },
+
+    // categoriesList:function(req, res){
+    //         var categories  = Categories.find(
+    //             { select: ['id','name'] }
+    //         ).exec(function(err, categories){
+    //             if(err){
+    //                 throw new Error('category error');
+    //             }
+    //             return res.json(categories);
+    //         });
+    //         return res.json(null);
+    //  },
+
     list:function(req, res){
         var perPage = req.query.per_page;
         var currentPage = req.query.page;
@@ -23,6 +42,9 @@ module.exports = {
             });
         });
     }
-	
+
+    
+
+
 };
 
