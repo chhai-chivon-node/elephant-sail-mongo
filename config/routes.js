@@ -73,6 +73,7 @@ module.exports.routes = {
   //Category
 
 
-  'get /list/categories/name':'CategoriesController.categoriesList'
-
+  'get /list/category/name':'CategoryController.listCategoriesName',
+  'get /list/category/parrent':'CategoryController.listParentCategories',
+  'get /get/category/child':'CategoryContorller.getChildCategories'
 };
