@@ -70,5 +70,9 @@ module.exports.routes = {
   },
 
 
+  //Category
+
+
   'get /list/categories/name':'CategoriesController.categoriesList'
+
 };
