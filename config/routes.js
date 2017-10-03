@@ -68,12 +68,25 @@ module.exports.routes = {
   '/admin/login':{
     view:'dashboard/pages/login'
   },
+  
+  '/upload-file':{
+    view: 'uploadfile'  // view 'uploadfile' in views directory will loaded automatically
+  },
 
+  //Categories
+  'get /categories':'CategoryController.findall',
+  'get /categories/:id':'CategoryController.find',
+  'post /categories':'CategoryController.create',
+  'put /categories/:id':'CategoryController.update',
+  'delete /categories/:id':'CategoryController.delete',
+  'get /categories/name':'CategoryController.findCategoriesName',
+  'get /categories/parent':'CategoryController.findParentCategories',
+  'get /categories/child':'CategoryController.findChildCategories',
 
-  //Category
-
-
-  'get /list/category/name':'CategoryController.listCategoriesName',
-  'get /list/category/parrent':'CategoryController.listParentCategories',
-  'get /get/category/child':'CategoryContorller.getChildCategories'
+  //Products
+  'get /products':'ProductController.findall',
+  'get /products/:id':'ProductController.find',
+  'post /products':'ProductController.create',
+  'put /products/:id':'ProductController.update',
+  'delete /products/:id':'ProductController.delete',
 };

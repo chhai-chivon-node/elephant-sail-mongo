@@ -8,18 +8,9 @@
 module.exports = {
 
   attributes: {
-    name:{
-      type: 'string'
-    },
-    description:{
-      type:'string'
-    },
-    image:{
-      type:'string'
-    },
-    parent:{
-      type:'objectid'
-    }
+    name: { type: 'string' },
+    description: { type:'string' },
+    imageUrl : { type: 'string' },
   }
 };
 
