@@ -1,1 +1,134 @@
-login
+  <!-- 	header -->
+  <header>
+        <!-- Navbar -->
+          <nav class="navbar navbar-default navbar-fixed-top navbar-bg-dark-green">
+              <div class="container-fluid">
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                  <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                  </button>
+                </div>
+        
+                <!-- menu header -->
+                <% include ../partials/header %>
+                <!-- /menu header -->
+          </div>
+          <!-- /.container-fluid -->
+        </nav>
+    </header>
+    <!-- 	/header -->
+      
+      <!-- logo -->
+      <% include ../partials/logo %>
+      <!-- /logo -->
+      
+      <!-- search -->
+      <% include ../partials/search %>
+      <!-- /search -->
+      
+      <!-- 	Login -->
+	<section id="login-panel">
+            <div class="container">
+    
+            <div class="border-top"></div>
+    
+                <!-- Return Customer  -->
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                            <div class="return-costomer-login">
+                                <h3>Returning Customer</h3>
+                                <h5>I am a returning customer</h5>
+                                    <!-- facebook login -->
+                                        <i class="fa fa-facebook"></i> 
+                                  <button type="button" class="btn btn-primary btn-block active btn-facebook">Login with Facebbok</button>
+    
+                                        <h2>OR</h2>
+    
+                                    <!-- 	form login -->
+                                    <div class="form-login">
+                                        <form>
+                                  <div class="form-group">
+                                    <label for="exampleInputEmail1">Email address</label>
+                                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Email address">
+                                  </div>
+                                  <div class="form-group">
+                                    <label for="exampleInputPassword1">Password</label>
+                                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+                                  </div>
+    
+                                  <div class="form-group">
+                                        <a href="">Forgotten Password</a>
+                                  </div>
+    
+                                  <button type="submit" class="btn btn-success btn-block btn-return-login">Login</button>
+                                </form>
+                                    </div>
+                                    <!-- 	form login -->
+    
+                            
+                            
+                                    <!-- /facebook login -->
+                            </div>
+                        
+                    </div>
+                    <!-- /Return Customer -->
+    
+                    <!-- New Member -->
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                        <div class="new-costomer-login">
+                                <h3>New Customer</h3>
+                                <h5>Register Account</h5>
+                                <p>
+                                    By creating an account you will be able to shop faster, be up to date on an order's status, and keep track of the orders you have previously made.
+                                </p>
+    
+                                <!-- Register button -->
+                                    <a href="register.html" class="btn btn-success btn-new-register">Create New Account</a>
+                                <!-- /Register button -->
+    
+                                </div>
+                    </div>
+                    <!-- /New Member -->
+            </div>
+        </section>
+    
+    <!-- /Login -->
+      
+      <!-- chat -->
+      <% include ../partials/chat %>
+      <!-- /chat -->
+      
+      <!-- Footer -->
+      <footer>
+          <!-- footer top -->
+          <section id="footer_top">
+                  <div class="container">
+                      <div class="row">
+                      
+                          <!-- contact -->
+                          <% include ../partials/contact %>
+                          <!-- /contact -->
+      
+                          <!-- shared -->
+                          <% include ../partials/shared %>
+                          <!-- /shared -->
+                          
+                          <!-- how to buy -->
+                          <% include ../partials/how-to-buy %>
+                          <!-- how to buy -->
+                      </div>
+                  </div>
+          </section>
+          <!-- /footer top -->		
+      
+        <!-- footer buttom -->
+          <section id="footer_buttom">
+              <% include ../partials/footer %>
+          </section>
+        <!-- /footer buttom -->
+      </footer>
+      <!-- /Footer -->
+      

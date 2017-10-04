@@ -41,6 +41,18 @@ module.exports.routes = {
   '/register':{
     view:'pages/register'
   },
+  '/checkout':{
+    view:'pages/checkout'
+  },
+  '/shopping':{
+    view:'pages/shopping'
+  },
+  '/category':{
+    view:'pages/category'
+  },
+  '/about':{
+    view:'pages/about'
+  },
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *

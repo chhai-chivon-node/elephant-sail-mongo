@@ -10,11 +10,8 @@ module.exports = {
      * `CategoryController.findall()`
      */
     findall: function (req, res) {
-        console.log("Inside findall..............");
-        var page = req.param("page");
-        var limit = req.param("limit");
         return Category.find().then(function (categories) {
-            console.log("find all product = " , res.json(categories));
+            console.log("find all product = " , categories);
             return res.json(categories);
         }).catch(function (err) {
             console.error("Error on find all", err);
@@ -25,10 +22,8 @@ module.exports = {
      */
     find: function (req, res) {
         var pId = req.params.id;
-        console.log("Inside find.............." + pId);
-
         return Category.find({id : pId}).then(function (category) {
-            console.log("find all product = " , res.json(category));
+            console.log("find all product = " , category);
             return res.json(category);
         }).catch(function (err) {
             console.error("Error on find all", err);
@@ -87,7 +82,6 @@ module.exports = {
      */
     update: function (req, res) {
         var pId = req.params.id;
-        console.log("Inside update..............", pId);
         var category = {
             name: req.param("name"),
             description: req.param("description"),
@@ -106,8 +100,6 @@ module.exports = {
      */
     delete: function (req, res) {
         var pId = req.params.id;
-        console.log("Inside delete..............");
-
         return Category.destroy({ id: pId }).then(function (category) {
             console.log("Deleted successfully!!!  = " ,  res.json(category));
             return res.json(category);
