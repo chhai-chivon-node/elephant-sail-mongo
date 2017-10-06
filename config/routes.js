@@ -77,6 +77,9 @@ module.exports.routes = {
   '/dashboard/user':{
     view:'dashboard/pages/user'
   },
+  '/dashboard/partner':{
+    view:'dashboard/pages/partner'
+  },
   '/admin/login':{
     view:'dashboard/pages/login'
   },
