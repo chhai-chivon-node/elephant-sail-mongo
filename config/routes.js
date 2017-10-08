@@ -104,4 +104,20 @@ module.exports.routes = {
   'post /products':'ProductController.create',
   'put /products/:id':'ProductController.update',
   'delete /products/:id':'ProductController.delete',
+
+
+  //Users
+  'get /users':'UserController.findall',
+  'get /users/:id':'UserController.find',
+  'post /users':'UserController.create',
+  'put /users/:id':'UserController.update',
+  'delete /users/:id':'UserController.delete',
+
+
+  //Partner
+  'get /partners':'PartnerController.findall',
+  'get /partners/:id':'PartnerController.find',
+  'post /partners':'PartnerController.create',
+  'put /partners/:id':'PartnerController.update',
+  'delete /partners/:id':'PartnerController.delete'
 };
