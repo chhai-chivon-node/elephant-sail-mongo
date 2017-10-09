@@ -11,7 +11,6 @@ module.exports = {
      */
     findall: function (req, res) {
         return Category.find().then(function (categories) {
-            console.log("find all product = " , categories);
             return res.json(categories);
         }).catch(function (err) {
             console.error("Error on find all", err);
@@ -23,10 +22,9 @@ module.exports = {
     find: function (req, res) {
         var pId = req.params.id;
         return Category.find({id : pId}).then(function (category) {
-            console.log("find all product = " , category);
             return res.json(category);
         }).catch(function (err) {
-            console.error("Error on find all", err);
+            console.log("Error on find all", err);
         });
     },
     /**
@@ -36,7 +34,7 @@ module.exports = {
         Category.find( { select: ['id','name'] }).then(function(categories){
             return res.json(categories);
         }).catch(function(err){
-            console.error(err);
+            console.log(err);
         });
     },
     /**
@@ -46,7 +44,7 @@ module.exports = {
         Category.find( { where: {'parent':''} }).then(function(categories){
             return res.json(categories);
         }).catch(function(err){
-            console.error(err);
+            console.log(err);
         });
     },
     /**
@@ -57,7 +55,7 @@ module.exports = {
         Category.find({ id : parentId }).then(function(categories){
                 return res.json(categories);
             }).catch(function(err){
-                console.error(err);
+                console.log(err);
             });
         
     },
@@ -71,11 +69,10 @@ module.exports = {
             imageUrl: req.param("imageUrl")
         };
         return Category.create(category).then(function (cat) {
-                     console.log("Product create: ",  res.json(cat));
-                     return res.json(cat);
-                }).catch(function (err) {
-                        console.error(err);
-                });
+                return res.json(cat);
+            }).catch(function (err) {
+                console.log(err);
+            });
     },
     /**
      * `CategoryController.update()`
@@ -85,14 +82,13 @@ module.exports = {
         var category = {
             name: req.param("name"),
             description: req.param("description"),
-            imageUrl: req.param("imageUrl")
+            imageUrl: req.param("image")
         };
         return Category.update({id: pId}, category).then(function (category) {
-                    console.log("Deleted successfully!!!  = " ,  res.json(category));
-                    return res.json(category);
-                }).catch(function (err) {
-                    console.log("Deleted unsuccessfully");
-                });
+                return res.json(category);
+            }).catch(function (err) {
+                console.log("Deleted unsuccessfully");
+            });
 
      },
     /**
@@ -101,7 +97,6 @@ module.exports = {
     delete: function (req, res) {
         var pId = req.params.id;
         return Category.destroy({ id: pId }).then(function (category) {
-            console.log("Deleted successfully!!!  = " ,  res.json(category));
             return res.json(category);
         }).catch(function (err) {
             console.log("Deleted unsuccessfully");
