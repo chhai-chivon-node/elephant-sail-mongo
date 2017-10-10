@@ -61,7 +61,7 @@ module.exports = {
 
     delete:function(req,res){
         var uId = req.params.id;
-        return User.delete(uId).then(function(user){
+        return User.destroy(uId).then(function(user){
                 return res.json(user);
         }).catch(function(err){
                 console.log(err);

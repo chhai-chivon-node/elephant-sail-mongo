@@ -32,6 +32,8 @@ module.exports.routes = {
   *                                                                          *
   ***************************************************************************/
 
+  //views
+
   '/': {
     view: 'index'
   },
@@ -53,6 +55,12 @@ module.exports.routes = {
   '/about':{
     view:'pages/about'
   },
+  '/account':{
+    view:'pages/account'
+  },
+  '/delivery':{
+    view:'pages/delivery'
+  },
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
@@ -62,6 +70,10 @@ module.exports.routes = {
   * for configuration options and examples.                                  *
   *                                                                          *
   ***************************************************************************/
+
+
+
+
   '/dashboard/index':{
       view:'dashboard/index'
   },
@@ -94,9 +106,9 @@ module.exports.routes = {
   'post /categories':'CategoryController.create',
   'put /categories/:id':'CategoryController.update',
   'delete /categories/:id':'CategoryController.delete',
-  'get /categories/name':'CategoryController.findCategoriesName',
-  'get /categories/parent':'CategoryController.findParentCategories',
-  'get /categories/child':'CategoryController.findChildCategories',
+  'get /categories/list/name':'CategoryController.findCategoriesName',
+  'get /categories/list/parent':'CategoryController.findParentCategories',
+  'get /categories/list/child':'CategoryController.findChildCategories',
 
   //Products
   'get /products':'ProductController.findall',
@@ -119,5 +131,13 @@ module.exports.routes = {
   'get /partners/:id':'PartnerController.find',
   'post /partners':'PartnerController.create',
   'put /partners/:id':'PartnerController.update',
-  'delete /partners/:id':'PartnerController.delete'
+  'delete /partners/:id':'PartnerController.delete',
+
+
+  //Slide
+  'get /slides':'SlideController.findall',
+  'get /slides/:id':'SlideController.find',
+  'post /slides':'SlideController.create',
+  'put /slides/:id':'SlideController.update',
+  'delete /slides/:id':'SlideController.delete'
 };

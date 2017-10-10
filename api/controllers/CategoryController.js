@@ -41,7 +41,7 @@ module.exports = {
      * `CategoryController.findParentCategories()`
      */
     findParentCategories: function(req , res){
-        Category.find( { where: {'parent':''} }).then(function(categories){
+        Category.find( {parent:''}).then(function(categories){
             return res.json(categories);
         }).catch(function(err){
             console.log(err);
