@@ -17,7 +17,6 @@ app.controller('productController', function($scope, $http, PRODUCT_END_POINT,ca
                     $scope.listCategoriesName = res;
                 })
             }
-    
         
             $scope.getProduct = function() {
                 $http.get(PRODUCT_END_POINT).then(function (response) {
@@ -74,4 +73,6 @@ app.controller('productController', function($scope, $http, PRODUCT_END_POINT,ca
             }
     
             $scope.init();
+
+
 });

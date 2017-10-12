@@ -22,59 +22,49 @@
   </header>
   <!-- 	/header -->
     
-    <!-- logo -->
-    <!-- <% include ../partials/logo %> -->
-    <!-- /logo -->
-    
-    <!-- search -->
-    <!-- <% include ../partials/search %> -->
-    <!-- /search -->
-    
-      <!-- Forget password -->
-    <section id="login-panel">
-          <div class="container">
-          <div class="border-top"></div>
-            <h2>My Account</h2>
+      <!-- Account info -->
+<section id="login-panel">
+    <div class="container">
+      <div class="border-top"></div>
+      <h3>Payment History</h3>
+        <!-- Return Customer  -->
+        <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+            <!-- Return Customer  -->
             <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="new-costomer-login">
-                  <ul class="list">
-                    <li>
-                      <a href="/account-info">
-                        <i class="fa fa-user-circle" aria-hidden="true" style="color:brown"></i>&nbsp; 
-                        Edit account information
-                    </a>
-                    </li>
-                    <li>
-                        <a href="/change-password">
-                          <i class="fa fa-key" aria-hidden="true"style="color:brown"></i>&nbsp; 
-                          Change password
-                        </a>
-                    </li>
-                  </ul>
+                <div class="return-costomer-login">
+                    <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                          <tr>
+                            <th>No</th>
+                            <th>Payment Date</th>
+                            <th>Category</th>
+                            <th>Quantity</th>
+                            <th>Price</th>
+                            <th>Total</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          <tr>
+                            <td>1</td>
+                            <td>Product Name</td>
+                            <td>Cateogry name</td>
+                            <td>12</td>
+                            <td>1200</td>
+                            <td>1200</td>
+                          </tr>
+                        </tbody>
+                      </table>
+                    </div>  
+                    <br/>
+                    <button type="button" class="btn" onclick="onBack()">Back</button>
               </div>
-            </div>
-            <h2>My Orders</h2>
-            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                <div class="new-costomer-login">
-                    <ul class="list">
-                        <li>
-                          <a href="/order-history">
-                            <i class="fa fa-shopping-cart" aria-hidden="true" style="color:brown"></i>&nbsp; 
-                            View order history
-                          </a>
-                        </li>
-                        <li>
-                          <a href="/payment-history">
-                            <i class="fa fa-cc-visa" aria-hidden="true" style="color:brown"></i>&nbsp; 
-                            View payment history
-                          </a>
-                        </li>
-                      </ul>
-                </div>
-            </div>
-          </div>
-      </section>
-      <!-- /Forget password -->
+            
+        </div>
+        <!-- /Return Customer -->
+    </div>
+</section>
+<!-- /Account info -->
     
     <!-- chat -->
     <% include ../partials/chat %>
@@ -110,4 +100,8 @@
       <!-- /footer buttom -->
     </footer>
     <!-- /Footer -->
-    
+    <script>
+      function onBack(){
+        return window.location.replace("http://localhost:1337/account");
+      }
+    </script>

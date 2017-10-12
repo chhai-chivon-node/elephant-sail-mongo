@@ -61,6 +61,27 @@ module.exports.routes = {
   '/delivery':{
     view:'pages/delivery'
   },
+  '/forget-password':{
+    view:'pages/forget-password'
+  },
+  '/verify':{
+    view:'pages/verify'
+  },
+  '/account-info':{
+    view:'pages/account-info'
+  },
+  '/change-password':{
+    view:'pages/change-password'
+  },
+  '/order-history':{
+    view:'pages/order-history'
+  },
+  '/payment-history':{
+    view:'pages/payment-history'
+  },
+  '/order-info':{
+    view:'pages/order-info'
+  },
   /***************************************************************************
   *                                                                          *
   * Custom routes here...                                                    *
