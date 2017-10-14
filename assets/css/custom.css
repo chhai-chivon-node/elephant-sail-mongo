@@ -11,10 +11,11 @@ body{
 .navbar-bg-dark-green{
 	border-radius: 0;
 	background-color: #16a085;
+	margin-top: -50px;
 }
 
 .navbar-default{
-	padding-bottom: 7px;
+	/* padding-bottom: 7px; */
 }
 
 .secound-nav{

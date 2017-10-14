@@ -10,11 +10,43 @@
     <link href="/plugin/image-zoom/css/easyzoom.css" rel="stylesheet">
     
     <script src="https://use.fontawesome.com/309e53dbe8.js"></script>
+
 <!-- Collect the nav links, forms, and other content for toggling -->
-<ul class="nav navbar-nav navbar-right first-nav">
+<ul class="nav navbar-nav navbar-right">
+    <div class="container-fluid">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>                        
+          </button>
+          <i class="fa fa-list" aria-hidden="true"></i>
+          <a class="navbar-brand" href="/">dsfdsad<i class="fa fa-user-o" aria-hidden="true"></i></a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav navbar-left">
+              <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+              <li><a href="/register"><span class="glyphicon glyphicon-user"></span>&nbsp; Register</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown">
+              <a class="dropdown-toggle" data-toggle="dropdown" href="#"> <i class="fa fa-shopping-basket" aria-hidden="true"></i> Item <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Page 1-1</a></li>
+                <li><a href="#">Page 1-2</a></li>
+                <li><a href="#">Page 1-3</a></li>
+              </ul>
+            </li>
+            <li><a href="/login"><span class="glyphicon glyphicon-log-in"></span>&nbsp; Login</a></li>
+            <li><a href="/register"><span class="glyphicon glyphicon-user"></span>&nbsp; Register</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+<!-- 
         <li><a href="/login">Login</a></li>
         <li><a href="/register">Register</a></li>
-        
         <li class="dropdown" id="shop-cart">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown"  role="button" aria-haspopup="true" aria-expanded="false">
             <i class="fa fa-shopping-basket" aria-hidden="true"></i>
@@ -23,7 +55,7 @@
              
             </a>
             <a href="" id="loading" class="loading_btn">Loading...</a>
-        </li>
+        </li> -->
 
         <!--  empty cart -->
           <div class="cart-empty">
@@ -39,7 +71,7 @@
              </div>
 
            <!--  show-item-order -->
-            <div class="show-item-order">
+            <!-- <div class="show-item-order">
               <table class="table">
                 <tbody>
                   <tr>
@@ -69,12 +101,12 @@
                 </tbody>
               </table>
               
-            </div>
+            </div> -->
           <!--   /show-item-order -->
 
           <!-- grandtotal-item-order -->
             <div class="grandtotal-item-order">
-              <table class="table">
+              <!-- <table class="table">
                 <tr>
                   <td>Sub-Total</td>
                   <td>$10.40</td>
@@ -88,7 +120,7 @@
                   <td><strong>$12.40</strong></td>
                 </tr>
               </table>
-            
+             -->
              <!--  Checkout -->
              <a href="checkout/checkout.html" class="btn btn-success btn-checkout"><i class="fa fa-shopping-cart" aria-hidden="true"></i> &nbsp; CHECKOUT NOW</a>
             <!--  /Checkout -->
