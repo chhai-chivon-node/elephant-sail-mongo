@@ -125,12 +125,8 @@
                     </div>
                     <div class="form-group">
                         <label for="image">Image:</label>
-                        <input type="file" class="form-control" id="image">
+                        <input type="file" class="form-control" nv-file-select="" uploader="uploader" multiple>
                     </div>
-                    <div class="form-group">
-                      <label for="image">Image:</label>
-                      <input type="file" class="form-control" id="image">
-                  </div>
                     <button type="submit" class="btn btn-primary" ng-click="saveItem()">{{ btnName }}</button>
                 </form>
               </div>
