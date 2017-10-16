@@ -113,8 +113,8 @@ module.exports.routes = {
   '/dashboard/partner':{
     view:'dashboard/pages/partner'
   },
-  '/dashboard/slider':{
-    view:'dashboard/pages/slider'
+  '/dashboard/slide':{
+    view:'dashboard/pages/slide'
   },
   '/admin/login':{
     view:'dashboard/pages/login'
