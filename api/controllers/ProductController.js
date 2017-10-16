@@ -11,23 +11,12 @@ module.exports = {
      */
     findall: function (req, res,next) {
         var p = req.param("page");
-        if(p == null){
-            p = 1;
-        }
         var l = req.param("limit");
-        if(l== null){
-            l = 10;
-        }
-        return Product.find({ skip: p,
-            limit: l}).exec(function(err, products) {
-            if(err) throw err;
-            next(products);
-            return {
-                    "data":products,
-                    "page":p,
-                    "limit":l
-                }
-          });
+        return Product.find().then(function (products) {
+            return res.json(products);
+        }).catch(function (err) {
+            console.error(err);
+        });
     },
     /**
      * `ProductController.find()`
@@ -37,7 +26,7 @@ module.exports = {
         return Product.find({id : pId}).then(function (product) {
             return res.json(product);
         }).catch(function (err) {
-            console.log("Error on find all", err);
+            console.log(err);
         });
     },
     /**

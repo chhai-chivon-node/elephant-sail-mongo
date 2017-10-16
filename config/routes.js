@@ -113,6 +113,9 @@ module.exports.routes = {
   '/dashboard/partner':{
     view:'dashboard/pages/partner'
   },
+  '/dashboard/slider':{
+    view:'dashboard/pages/slider'
+  },
   '/admin/login':{
     view:'dashboard/pages/login'
   },

@@ -32,7 +32,7 @@ module.exports = {
         };
         return Slide.create(slide).then(function(s){
             return res.json(s);
-        }).cactch(function(err){
+        }).catch(function(err){
             console.log(err);
         });
     },
