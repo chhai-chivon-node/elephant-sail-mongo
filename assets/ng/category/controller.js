@@ -1,4 +1,4 @@
-app.controller('categoryController', function($scope, $http, CATEGORY_END_POINT, category, FileUploader) {
+app.controller('CategoryController', function($scope, CategoryService) {
 
     $scope.isCreate = true;
     $scope.btnName = 'Create';
@@ -7,46 +7,47 @@ app.controller('categoryController', function($scope, $http, CATEGORY_END_POINT,
     $scope.selectedCategory = {};
     $scope.listCategoriesName = [];
 
-    $scope.init = function() {
-        console.log("Product loaded ...");
-        $scope.clearForm();
-        $scope.getCategory();
+    $scope.categories = [];
 
-        category.listCategoriesName().then(function(res) {
+    $scope.init = function() {
+        console.log("Categories loaded ...");
+        $scope.clearForm();
+        $scope.getItems();
+
+        CategoryService.listCategoriesName().then(function(res) {
             $scope.listCategoriesName = res;
-        })
+        });
     }
 
 
-    $scope.getCategory = function() {
-        $http.get(CATEGORY_END_POINT).then(function(response) {
-            console.log(response.data);
-            $scope.categories = response.data;
+    $scope.getItems = function() {
+        CategoryService.findAll().then(function(res){
+            $scope.categories = res;
+            console.log("categories items :",res);
         });
     }
 
     $scope.saveItem = function() {
-
         if ($scope.isCreate) {
-            $http.post(CATEGORY_END_POINT, $scope.item).then(function(res) {
-                console.log("res: ", res);
+            CategoryService.saveItem($scope.item).then(function(res){
+                $scope.categories = res;
+                $scope.getItems();
+                $scope.clearForm();
             });
             console.log("createItem: ", $scope.item);
-        }
-        else {
-            $http.put(CATEGORY_END_POINT + '/' + $scope.item.id, $scope.item).then(function(res) {
-                console.log("res: ", res);
-
+        } else {
+            CategoryService.updateItem($scope.item.id,$scope.item).then(function(res){
+                $scope.categories = res;
+                $scope.getItems();
+                $scope.clearForm();
             });
-        }
-        $scope.clearForm();
-        $scope.getCategory();
+        }     
     }
 
     $scope.deleteItem = function(item) {
-        $http.delete(CATEGORY_END_POINT + '/' + item.id).then(function(res) {
-            console.log("res: ", res);
-            $scope.getCategory();
+        CategoryService.deleteItem(item).then(function(res){
+            $scope.categories = res;
+            $scope.getItems();
         });
     }
 
@@ -65,32 +66,14 @@ app.controller('categoryController', function($scope, $http, CATEGORY_END_POINT,
         $scope.btnName = 'Create';
         $scope.item = {
             name: '',
-            description: ''
+            description: '',
+            imageUrl:''
         };
     }
 
     $scope.onCategoryChange = function() {
         console.log($scope.selectedCategory);
     }
-
-    var uploader = $scope.uploader = new FileUploader({
-        url: '/file/upload'
-    });
-
-    // FILTERS
-
-    uploader.filters.push({
-        name: 'imageFilter',
-        fn: function(item /*{File|FileLikeObject}*/ , options) {
-            var type = '|' + item.type.slice(item.type.lastIndexOf('/') + 1) + '|';
-            return '|jpg|png|jpeg|bmp|gif|'.indexOf(type) !== -1;
-        }
-    });
-
-    uploader.onCompleteAll = function() {
-        console.info('onCompleteAll');
-    };
-
     $scope.init();
 
 });

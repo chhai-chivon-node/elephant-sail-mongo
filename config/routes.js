@@ -130,7 +130,7 @@ module.exports.routes = {
   'post /categories':'CategoryController.create',
   'put /categories/:id':'CategoryController.update',
   'delete /categories/:id':'CategoryController.delete',
-  'get /categories/list/name':'CategoryController.findCategoriesName',
+  'get /categories/list/names':'CategoryController.findCategoriesName',
   'get /categories/list/parent':'CategoryController.findParentCategories',
   'get /categories/list/child':'CategoryController.findChildCategories',
 

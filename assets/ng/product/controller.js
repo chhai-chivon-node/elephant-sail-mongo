@@ -1,5 +1,5 @@
 
-app.controller('productController', function($scope, $http, PRODUCT_END_POINT,category) {
+app.controller('productController', function($scope,ProductService,CategoryService) {
     
             $scope.isCreate = true;
             $scope.btnName = 'Create';
@@ -8,44 +8,46 @@ app.controller('productController', function($scope, $http, PRODUCT_END_POINT,ca
             $scope.selectedCategory = {};
             $scope.listCategoriesName = [];
     
+            $scope.products = [];
+
             $scope.init = function() {
                 console.log("Product loaded ...");
                 $scope.clearForm();
-                $scope.getProduct();
+                $scope.getItems();
     
-                category.listCategoriesName().then(function(res){
+                CategoryService.listCategoriesName().then(function(res){
                     $scope.listCategoriesName = res;
                 })
             }
         
-            $scope.getProduct = function() {
-                $http.get(PRODUCT_END_POINT).then(function (response) {
-                    console.log(response.data);
-                    $scope.products = response.data;
+            $scope.getItems = function() {
+                ProductService.findAll().then(function(res){
+                    $scope.products = res;
+                    console.log("slide items",res);
                 });
             }
         
             $scope.saveItem = function() {
                 if ($scope.isCreate) {
-        
-                    $http.post(PRODUCT_END_POINT, $scope.item).then(function (res) {
-                        console.log("res: ", res);
+                    ProductService.saveItem($scope.item).then(function(res){
+                        $scope.products = res;
+                        $scope.getItems();
+                        $scope.clearForm();
                     });
                     console.log("createItem: ", $scope.item);
                 } else {
-        
-                    $http.put(PRODUCT_END_POINT + '/' + $scope.item.id,$scope.item).then(function (res) {
-                        console.log("res: ", res);
+                    ProductService.updateItem($scope.item.id,$scope.item).then(function(res){
+                        $scope.products = res;
+                        $scope.getItems();
+                        $scope.clearForm();
                     });
-                }
-                $scope.clearForm();     
-                $scope.getProduct();
+                }     
             }
         
             $scope.deleteItem = function(item) {
-                $http.delete(PRODUCT_END_POINT + '/'+ item.id).then(function (res) {
-                    console.log("res: ", res);
-                    $scope.getProduct();
+                ProductService.deleteItem(item).then(function(res){
+                    $scope.products = res;
+                    $scope.getItems();
                 });
             }
         

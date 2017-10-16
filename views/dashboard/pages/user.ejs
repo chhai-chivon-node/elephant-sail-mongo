@@ -1,5 +1,5 @@
 
-<body class="fixed-nav sticky-footer bg-dark" id="page-top" ng-controller="mainController">
+<body class="fixed-nav sticky-footer bg-dark" id="page-top" ng-controller="UserController">
     <!-- Navigation-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
       <!-- header -->
@@ -48,41 +48,60 @@
             </div>
             <div class="card-body">
               <div class="table-responsive">
-                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <table class="table table-bordered" width="100%" cellspacing="0">
                   <thead>
                   <tr>
                     <th>No</th>
-                    <th>USERNAME</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
                     <th>EMAIL</th>
+                    <th>PHONE</th>
+                    <th>ADDRESS</th>
                     <th>CREATE DATE</th>
-                    <th>LOGIN DATE</th>
                     <th>ACTION</th>
                   </tr>
                   </thead>
                   <tbody>
-                  <tr>
-                    <td>1</td>
-                    <td>System Architect</td>
-                    <td>Edinburgh</td>
-                    <td>61</td>
-                    <td>2011/04/25</td>
+                  <tr users ng-repeat="user in users">
+                    <td>{{$index+1}}</td>
+                    <td>{{user.firstName}}</td>
+                    <td>{{user.lastName}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.phoneNumber}}</td>
+                    <td>{{user.address}}</td>
+                    <th>{{user.createdAt}}</th>
                     <td>
                       <!-- <button type="button" class="btn btn-primary"><i class="fa fa-eye" aria-hidden="true"></i></button> -->
-                      <button type="button" class="btn btn-warning"><i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#userModal" ><i class="fa fa-pencil" aria-hidden="true"></i></button>
                       <button type="button" class="btn btn-danger"><i class="fa fa-trash-o" aria-hidden="true"></i></button>
                     </td>
                   </tr>
                   </tbody>
                 </table>
+                <nav aria-label="Page navigation example">
+                  <ul class="pagination justify-content-end">
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Previous">
+                        <span aria-hidden="true">&laquo;</span>
+                        <span class="sr-only">Previous</span>
+                      </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                      <a class="page-link" href="#" aria-label="Next">
+                        <span aria-hidden="true">&raquo;</span>
+                        <span class="sr-only">Next</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
               </div>
             </div>
           </div>
           </div>
              <!--END CONTENT -->
-  
-
-
-
           </div>
         </div>
       </div>

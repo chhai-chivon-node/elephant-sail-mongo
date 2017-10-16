@@ -1,50 +1,47 @@
-app.controller('slideController', function($scope, $http, SLIDE_END_POINT,category) {
+app.controller('SlideController', function($scope,SlideService) {
     
             $scope.isCreate = true;
             $scope.btnName = 'Create';
             $scope.item  = {};
-        
+         
+            $scope.slides = [];
+
             $scope.selectedCategory = {};
-            $scope.listCategoriesName = [];
     
             $scope.init = function() {
                 console.log("Slide loaded ...");
                 $scope.clearForm();
-                $scope.getSlide();
-    
-                category.listCategoriesName().then(function(res){
-                    $scope.listCategoriesName = res;
-                })
+                $scope.getItems();
             }
-        
-            $scope.getSlide = function() {
-                $http.get(SLIDE_END_POINT).then(function (response) {
-                    console.log(response.data);
-                    $scope.products = response.data;
+
+            $scope.getItems = function() {
+                SlideService.findAll().then(function(res){
+                    $scope.slides = res;
+                    console.log("slide items",res);
                 });
             }
         
             $scope.saveItem = function() {
                 if ($scope.isCreate) {
-        
-                    $http.post(SLIDE_END_POINT, $scope.item).then(function (res) {
-                        console.log("res: ", res);
+                    SlideService.saveItem($scope.item).then(function(res){
+                        $scope.sides = res;
+                        $scope.getItems();
+                        $scope.clearForm();
                     });
                     console.log("createItem: ", $scope.item);
                 } else {
-        
-                    $http.put(SLIDE_END_POINT + '/' + $scope.item.id,$scope.item).then(function (res) {
-                        console.log("res: ", res);
+                    SlideService.updateItem($scope.item.id,$scope.item).then(function(res){
+                        $scope.sides = res;
+                        $scope.getItems();
+                        $scope.clearForm();
                     });
-                }
-                $scope.clearForm();     
-                $scope.getProduct();
+                }     
             }
         
             $scope.deleteItem = function(item) {
-                $http.delete(SLIDE_END_POINT + '/'+ item.id).then(function (res) {
-                    console.log("res: ", res);
-                    $scope.getProduct();
+                SlideService.deleteItem(item).then(function(res){
+                    $scope.sides = res;
+                    $scope.getItems();
                 });
             }
         
@@ -62,14 +59,11 @@ app.controller('slideController', function($scope, $http, SLIDE_END_POINT,catego
                 $scope.isCreate = true;
                 $scope.btnName = 'Create';
                 $scope.item  = {
-                    name: '',
-                    description: ''
+                    title: '',
+                    description: '',
+                    image:''
                 };
             } 
-        
-            $scope.onCategoryChange = function(){
-                console.log($scope.selectedCategory);
-            }
-    
+
             $scope.init();
 });

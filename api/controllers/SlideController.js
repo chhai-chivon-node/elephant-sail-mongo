@@ -44,7 +44,7 @@ module.exports = {
             description:req.param("description"),
             image:req.param("image")
         };
-        return Slide.update({id, slide}).then(function(s){
+        return Slide.update({id:sId}, slide).then(function(s){
             return res.json(s);
         }).catch(function(err){
             console.log(err);

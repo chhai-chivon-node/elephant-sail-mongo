@@ -1,35 +1,37 @@
-app.controller('UserController', function($scope,UserService) {
+app.controller('PartnerController', function($scope,PartnerService) {
     
             $scope.isCreate = true;
             $scope.btnName = 'Create';
             $scope.item  = {};
          
-            $scope.users = [];
+            $scope.partners = [];
+
+            $scope.selectedCategory = {};
     
             $scope.init = function() {
-                console.log("User loaded ...");
+                console.log("Partner loaded ...");
                 $scope.clearForm();
                 $scope.getItems();
             }
 
             $scope.getItems = function() {
-                UserService.findAll().then(function(res){
-                    $scope.users = res;
-                    console.log("user items",res);
+                PartnerService.findAll().then(function(res){
+                    $scope.partners = res;
+                    console.log("partner items",res);
                 });
             }
         
             $scope.saveItem = function() {
                 if ($scope.isCreate) {
-                    UserService.saveItem($scope.item).then(function(res){
-                        $scope.users = res;
+                    PartnerService.saveItem($scope.item).then(function(res){
+                        $scope.partners = res;
                         $scope.getItems();
                         $scope.clearForm();
                     });
                     console.log("createItem: ", $scope.item);
                 } else {
-                    UserService.updateItem($scope.item.id,$scope.item).then(function(res){
-                        $scope.users = res;
+                    PartnerService.updateItem($scope.item.id,$scope.item).then(function(res){
+                        $scope.partners = res;
                         $scope.getItems();
                         $scope.clearForm();
                     });
@@ -37,8 +39,8 @@ app.controller('UserController', function($scope,UserService) {
             }
         
             $scope.deleteItem = function(item) {
-                UserService.deleteItem(item).then(function(res){
-                    $scope.users = res;
+                PartnerService.deleteItem(item).then(function(res){
+                    $scope.partners = res;
                     $scope.getItems();
                 });
             }
@@ -57,11 +59,9 @@ app.controller('UserController', function($scope,UserService) {
                 $scope.isCreate = true;
                 $scope.btnName = 'Create';
                 $scope.item  = {
-                    firstName: '',
-                    lastName: '',
-                    email:'',
-                    phoneNumber:'',
-                    address:''
+                    name: '',
+                    description: '',
+                    image:''
                 };
             } 
 
