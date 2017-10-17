@@ -8,7 +8,9 @@
 module.exports = {
     
     findall:function(req,res){
-        return Partner.find().then(function(partners){
+        var p = req.param("page");
+        var l = req.param("limit");
+        return Partner.find().paginate({page: p , limit: l}).then(function(partners){
                 return res.json(partners);
         }).catch(function(err){
                 console.log("Error :", err);

@@ -10,7 +10,9 @@ module.exports = {
      * `CategoryController.findall()`
      */
     findall: function (req, res) {
-        return Category.find().then(function (categories) {
+        var p = req.param("page");
+        var l = req.param("limit");
+        return Category.find().paginate({page: p , limit: l}).then(function (categories) {
             return res.json(categories);
         }).catch(function (err) {
             console.error("Error on find all", err);
@@ -41,6 +43,8 @@ module.exports = {
      * `CategoryController.findParentCategories()`
      */
     findParentCategories: function(req , res){
+        var p = req.param("page");
+        var l = req.param("limit");
         Category.find( {parent:''}).then(function(categories){
             return res.json(categories);
         }).catch(function(err){
@@ -51,6 +55,8 @@ module.exports = {
      * `CategoryController.findChildCategories()`
      */
     findChildCategories: function(req , res){
+        var p = req.param("page");
+        var l = req.param("limit");
         var parentId = req.param("id");
         Category.find({ id : parentId }).then(function(categories){
                 return res.json(categories);

@@ -8,7 +8,9 @@
 module.exports = {
 
     findall:function(req, res){
-        return Slide.find().then(function(slides){
+        var p = req.param("page");
+        var l = req.param("limit");
+        return Slide.find().paginate({page: p , limit: l}).then(function(slides){
             return res.json(slides);
         }).catch(function(err){
             console.log(err);

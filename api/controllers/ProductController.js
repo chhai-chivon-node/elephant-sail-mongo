@@ -12,7 +12,7 @@ module.exports = {
     findall: function (req, res,next) {
         var p = req.param("page");
         var l = req.param("limit");
-        return Product.find().then(function (products) {
+        return Product.find().paginate({page: p , limit: l}).then(function (products) {
             return res.json(products);
         }).catch(function (err) {
             console.error(err);
