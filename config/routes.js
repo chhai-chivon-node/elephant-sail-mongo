@@ -104,9 +104,6 @@ module.exports.routes = {
   '/dashboard/product':{
     view:'dashboard/pages/product'
   },
-  '/dashboard/customer':{
-    view:'dashboard/pages/customer'
-  },
   '/dashboard/user':{
     view:'dashboard/pages/user'
   },
@@ -163,5 +160,6 @@ module.exports.routes = {
   'get /slides/:id':'SlideController.find',
   'post /slides':'SlideController.create',
   'put /slides/:id':'SlideController.update',
-  'delete /slides/:id':'SlideController.delete'
+  'delete /slides/:id':'SlideController.delete',
+
 };

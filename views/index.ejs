@@ -31,7 +31,9 @@
     <!-- /search -->
     
     <!-- slide category -->
-    <% include partials/slide-category %>
+    <div ng-controller="CategoryController">
+        <% include partials/slide-category %>
+    </div>
     <!-- slide category -->
     <div>
         <!-- slide -->
@@ -53,7 +55,7 @@
     </section>
     
     <!-- /Modal Product Deatil -->
-    <div ng-controller="productController">
+    <div ng-controller="ProductController">
         <!-- new product -->
         <% include partials/product/new-product %>
         <!-- /new product -->
@@ -68,7 +70,9 @@
     </div>
     
     <!-- Our Partner -->
-    <% include partials/partner %>
+    <div ng-controller="PartnerController">
+        <% include partials/partner %>
+    </div>
     <!--/ Our Partner -->
     
     <!-- chat -->

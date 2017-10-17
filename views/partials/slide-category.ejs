@@ -9,56 +9,11 @@
     
                             <div class="item active">
                                 
-                                <div class="col-xs-2 col-sm-2 col-md-2">
-                                <a href="catagory/fresh-product.html">
-                                <img src="assets/images/catagory/fresh_product.png">
+                                <div class="col-xs-2 col-sm-2 col-md-2" categories ng-repeat="category in categories">
+                                <a href="/">
+                                <img src="/images/catagory/fresh_product.png">
                                 <div class="slide-catagory-title">
-                                    Fresh Product
-                                </div>
-                                </a>
-                                </div>
-    
-                                <div class="col-xs-2 col-sm-2 col-md-2">
-                                <a href="catagory/fruit.html">
-                                <img src="assets/images/catagory/fruits.png" alt="...">
-                                <div class="slide-catagory-title">
-                                    Fruits
-                                </div>
-                                </a>
-                                </div>
-    
-                                <div class="col-xs-2 col-sm-2 col-md-2">
-                                <a href="catagory/beverage.html">
-                                <img src="assets/images/catagory/beverage.png" alt="...">
-                                <div class="slide-catagory-title">
-                                    Beverage
-                                </div>
-                                </a>
-                                </div>
-    
-                                <div class="col-xs-2 col-sm-2 col-md-2">
-                                <a href="catagory/baby-child.html">
-                                <img src="assets/images/catagory/baby.png" alt="...">
-                                <div class="slide-catagory-title">
-                                    Baby & Child
-                                </div>
-                                </a>
-                                </div>
-    
-                                <div class="col-xs-2 col-sm-2 col-md-2">
-                                <a href="catagory/snack.html">
-                                <img src="/images/catagory/chips.png" alt="...">
-                                <div class="slide-catagory-title">
-                                     Snacks
-                                </div>
-                                </a>
-                                </div>
-    
-                                <div class="col-xs-2 col-sm-2 col-md-2">
-                                <a href="catagory/health-beauty.html">
-                                <img src="/images/catagory/health-beauty.png">
-                                <div class="slide-catagory-title">
-                                 Health & Beauty
+                                    {{category.name}}
                                 </div>
                                 </a>
                                 </div>

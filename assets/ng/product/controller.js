@@ -1,5 +1,5 @@
 
-app.controller('productController', function($scope,ProductService,CategoryService) {
+app.controller('ProductController', function($scope,ProductService,CategoryService) {
     
             $scope.isCreate = true;
             $scope.btnName = 'Create';
