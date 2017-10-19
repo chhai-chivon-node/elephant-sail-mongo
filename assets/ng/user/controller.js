@@ -61,7 +61,8 @@ app.controller('UserController', function($scope,UserService) {
                     lastName: '',
                     email:'',
                     phoneNumber:'',
-                    address:''
+                    address:'',
+                    password:'',
                 };
             } 
 

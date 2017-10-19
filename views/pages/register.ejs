@@ -5,12 +5,14 @@
               <div class="container-fluid">
                 <!-- Brand and toggle get grouped for better mobile display -->
                 <div class="navbar-header">
+                  <!--
                   <button type="button" class="navbar-toggle collapsed pull-right" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                   </button>
+                -->
                 </div>
         
                 <!-- menu header -->
@@ -32,7 +34,7 @@
       
       <!-- 	register -->
 	<section id="register-panel">
-      <div class="container">
+      <div class="container" ng-controller="UserController">
   
       <div class="border-top"></div>
   
@@ -57,23 +59,23 @@
                   </div>
   
                  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <label for="exampleInputFirstName"><span class="require">*</span>First Name</label>
-                  <input type="text" class="form-control" id="exampleInputFirstName" placeholder="First Name">
+                  <label for="first-name"><span class="require">*</span>First Name</label>
+                  <input type="text" class="form-control" id="first-name" placeholder="First Name" ng-model="firstName">
                   </div>
   
                  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <label for="exampleInputLastName"><span class="require">*</span>Last Name</label>
-                  <input type="text" class="form-control" id="exampleInputLastName" placeholder="Last Name">
+                  <label for="last-name"><span class="require">*</span>Last Name</label>
+                  <input type="text" class="form-control" id="last-name" placeholder="Last Name" ng-model="lastName">
                   </div>
   
                  <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <label for="exampleInputEmail1">E-Mail</label>
-                  <input type="email" class="form-control" id="exampleInputEmail1" placeholder="name@domain.com">
+                  <label for="email">E-Mail</label>
+                  <input type="email" class="form-control" id="email" placeholder="name@domain.com" ng-model="email">
                   </div>
   
                  <div class="form-group col-xs-12 col-sm-12">
-                  <label for="exampleInputPhone"><span class="require">*</span>YOUR PHONE NUMBER</label>
-                  <input type="text" class="form-control" id="exampleInputPhone" placeholder="010888***">
+                  <label for="phone"><span class="require">*</span>YOUR PHONE NUMBER</label>
+                  <input type="text" class="form-control" id="phone" placeholder="010888***" ng-model="phoneNumber"> 
                  </div>
   
                  <div class="form-header">
@@ -82,8 +84,8 @@
                   </div>
   
                   <div class="form-group col-xs-12 col-sm-12">
-                  <label for="exampleInputPhone"><span class="require">*</span>Your Address</label>
-                  <input type="text" class="form-control" id="exampleInputPhone" placeholder="House number, build name, room number(In case apartment)">
+                  <label for="address"><span class="require">*</span>Your Address</label>
+                  <input type="text" class="form-control" id="address" placeholder="House number, build name, room number(In case apartment)" ng-model="address">
                  </div>
   
   
@@ -93,13 +95,13 @@
                   </div>
   
                  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <label for="exampleInputPassword"><span class="require">*</span>Password</label>
-                  <input type="text" class="form-control" id="exampleInputPassword" placeholder="Password">
+                  <label for="password"><span class="require">*</span>Password</label>
+                  <input type="text" class="form-control" id="password" placeholder="Password" ng-model="password">
                   </div>
   
                  <div class="form-group col-xs-12 col-sm-12 col-md-6 col-lg-6">
-                  <label for="exampleInputPassword"><span class="require">*</span>Password Confirm</label>
-                  <input type="text" class="form-control" id="exampleInputPassword" placeholder="Password Confirm">
+                  <label for="confirm-password"><span class="require">*</span>Password Confirm</label>
+                  <input type="text" class="form-control" id="confirm-password" placeholder="Password Confirm">
                   </div>
   
   
@@ -125,7 +127,7 @@
                     </div>
                   </div>
                     
-                  <button type="submit" class="btn btn-success btn-block btn-new-register">Continue</button>
+                  <button type="submit" ng-click="saveItem()" class="btn btn-success btn-block btn-new-register">Continue</button>
                  
                 </form>
                   </div>
