@@ -33,8 +33,7 @@ module.exports = {
     confirmPassword:{
       type:'string',
       required: true,
-    }
-
+    },
   }
 };
 

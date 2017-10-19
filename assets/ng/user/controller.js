@@ -63,8 +63,25 @@ app.controller('UserController', function($scope,UserService) {
                     phoneNumber:'',
                     address:'',
                     password:'',
+                    confirmPassword:''
                 };
-            } 
+            }
+            
+            $scope.signUp = function(){
+                UserService.saveItem($scope.item).then(function(res){
+                    $scope.users = res;
+                    $scope.clearForm();
+                });
+                console.log("createItem: ", $scope.item);
+            }
+
+            $scope.signIn = function(){
+
+            }
+
+            $scope.logout = function(){
+
+            }
 
             $scope.init();
 });

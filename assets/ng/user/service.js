@@ -30,11 +30,32 @@ app.service('UserService', function ($http, USER_END_POINT) {
         });
     }
 
+    var signUp = function(user){
+        return $http.post(USER_END_POINT + "/signup" + user).then(function(res){
+            return res.data;
+        });
+    }
+
+    var signIn = function(user){
+        return $http.post(USER_END_POINT + '/signin' + user).then(function(res){
+            return res.data;
+        });
+    }
+
+    var logout = function(){
+        return $http.get(USER_END_POINT + '/logout').then(function(res){
+            
+        });
+    }
+
     return {
         findAll:  findAll,
         find: find,
         saveItem: saveItem,
         updateItem:  updateItem,
-        deleteItem: deleteItem
+        deleteItem: deleteItem,
+        signUp:  signIn,
+        signIn: signIn,
+        logout: logout
     }
 });

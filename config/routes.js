@@ -130,6 +130,8 @@ module.exports.routes = {
   'get /categories/list/names':'CategoryController.findCategoriesName',
   'get /categories/list/parent':'CategoryController.findParentCategories',
   'get /categories/list/child':'CategoryController.findChildCategories',
+  'get /categories/total':'CategoryController.count',
+  
 
   //Products
   'get /products':'ProductController.findall',

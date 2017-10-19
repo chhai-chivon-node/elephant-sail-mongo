@@ -69,10 +69,20 @@ module.exports = {
      * `CategoryController.create()`
      */
     create: function (req, res) {
+        var imageUrl = req.file('imageUrl');
+        imageUrl.upload({ dirname: '../../assets/images'},function onUploadComplete (err, files) {				
+            // Files will be uploaded to /assets/images/
+            // Access the files via localhost:1337/images/yourfilename
+                if (err) return res.serverError(err);								
+                //	IF ERROR Return and send 500 error with error
+                console.log(files);
+                res.json({status:200,file:files});
+                //This will print the details including new file name upload path etc
+        });
         var category = {
             name: req.param("name"),
             description: req.param("description"),
-            imageUrl: req.param("imageUrl")
+            imageUrl: imageUrl
         };
         return Category.create(category).then(function (cat) {
                 return res.json(cat);
@@ -107,7 +117,16 @@ module.exports = {
         }).catch(function (err) {
             console.log("Deleted unsuccessfully");
         });
-
+    },
+    /**
+     * count
+     */
+    count: function (req, res) {
+        return Category.find().then(function (categories) {
+            return res.json(categories);
+        }).catch(function (err) {
+            console.error("Error on find all", err);
+        });
     }
 };
 
