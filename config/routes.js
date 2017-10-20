@@ -113,10 +113,30 @@ module.exports.routes = {
   '/dashboard/slide':{
     view:'dashboard/pages/slide'
   },
-  '/admin/login':{
-    view:'dashboard/pages/login'
-  },
   
+  '/admin/index':{
+    view:'admin/index'
+  },
+  '/admin/category':{
+    view:'admin/pages/category'
+  },
+  '/admin/product':{
+    view:'admin/pages/product'
+  },
+  '/admin/user':{
+    view:'admin/pages/user'
+  },
+  '/admin/partner':{
+    view:'admin/pages/partner'
+  },
+  '/admin/slide':{
+    view:'admin/pages/slide'
+  },
+  '/admin/login':{
+    view:'admin/pages/login'
+  },
+
+
   '/upload-file':{
     view: 'uploadfile'  // view 'uploadfile' in views directory will loaded automatically
   },
